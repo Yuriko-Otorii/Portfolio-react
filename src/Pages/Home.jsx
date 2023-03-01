@@ -1,10 +1,12 @@
-import { useState } from 'react'
-import Footer from '../Components/Footer'
+import { lazy, useState } from 'react'
 
-import Header from '../Components/Header'
-import ProjectsSection from '../Components/ProjectsSection'
 import lightModeImg from '../images/blue-sky.jpg'
 import darkModeImg from '../images/night-sky.jpg'
+
+const Header = lazy(() => import('../Components/Header'))
+const ProjectsSection = lazy(() => import('../Components/ProjectsSection'))
+const AboutSection = lazy(() => import('../Components/AboutSection'))
+const Footer = lazy(() => import('../Components/Footer'))
 
 const Home = () => {
   const [mode, setMode] = useState(false)
@@ -18,9 +20,12 @@ const Home = () => {
         : "bg-cover blur-sm -z-50 h-full w-screen fixed"
         }        
       ></div>
-      <Header setMode={setMode} mode={mode}/>
-      <ProjectsSection />
 
+      <Header setMode={setMode} mode={mode}/>
+      
+      <ProjectsSection />
+      <AboutSection />
+      
       <Footer />
     </div>
   )

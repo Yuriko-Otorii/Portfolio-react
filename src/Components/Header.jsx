@@ -39,9 +39,9 @@ const Header = ({ mode, setMode }) => {
                 </div>  
             </div>
             <nav className="flex flex-col items-center mt-10 text-2xl md:text-4xl md:mb-10">
-                <HashLink to='/home#projects' className='my-2 font-bold'>Projects</HashLink>
-                <HashLink to='/home#about-me' className='my-2 font-bold'>About me</HashLink>
-                <HashLink to='/home#contacts' className='my-2 font-bold'>Contact</HashLink>
+                <HashLink smooth to='/home#projects' className='my-2 font-bold'>Projects</HashLink>
+                <HashLink smooth to='/home#about-me' className='my-2 font-bold'>About me</HashLink>
+                <HashLink smooth to='/home#contacts' className='my-2 font-bold'>Contact</HashLink>
             </nav>
             <HashLink to='/homeprojects' className='mt-5'>
                 <i className="fa-solid fa-arrow-down fa-2xl md:text-6xl"></i>
