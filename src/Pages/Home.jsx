@@ -6,6 +6,7 @@ import darkModeImg from '../images/night-sky.jpg'
 const Header = lazy(() => import('../Components/Header'))
 const ProjectsSection = lazy(() => import('../Components/ProjectsSection'))
 const AboutSection = lazy(() => import('../Components/AboutSection'))
+const ContactSection = lazy(() => import('../Components/ContactSection'))
 const Footer = lazy(() => import('../Components/Footer'))
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
       
       <ProjectsSection />
       <AboutSection />
+      <ContactSection />
       
       <Footer />
     </div>
