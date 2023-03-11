@@ -1,16 +1,30 @@
-import React from 'react'
+import { useLayoutEffect, useRef } from 'react';
+import { HashLink } from 'react-router-hash-link';
 
-import {HashLink} from 'react-router-hash-link';
+import { setHeaderAnimation } from './animations/headerAnimation';
 
 
 const Header = ({ mode, setMode }) => {
+    const nameElem = useRef(null)
+    const occupationElem = useRef(null)
+    const linketinIcon = useRef(null)
+    const githubIcon = useRef(null)
+    const navItem1 = useRef(null)
+    const navItem2 = useRef(null)
+    const navItem3 = useRef(null)
+    const downArrow = useRef(null)
+    
+    useLayoutEffect(() => {
+        setHeaderAnimation(nameElem, occupationElem, linketinIcon, githubIcon, navItem1, navItem2, navItem3, downArrow)
+    }, [])  
+
     const handleChangeMode= () => {
         setMode(!mode)
     }
 
   return (
       <>
-        <div className="absolute top-1 right-3 md:top-2 right-5">
+        <div className="absolute top-1 right-3 md:top-2 right-5" id="top">
             <div className='flex flex-col justify-center items-center'>
                 <p className='md:text-3xl'>Mode</p>
                 <div onClick={handleChangeMode}>
@@ -21,29 +35,29 @@ const Header = ({ mode, setMode }) => {
                 </div>
             </div>
         </div>
-        <div className="flex flex-col items-center pt-16">
+        <div className="flex flex-col items-center pt-14">
             <div className="flex flex-col items-center">
-                <h1 className="text-6xl md:text-9xl font-bold">Yuriko Otorii</h1>
-                <h4 className="text-3xl md:text-6xl font-bold my-3 md:mb-8">Front-end developer</h4>
+                <h1 ref={nameElem} className="text-6xl md:text-9xl font-bold">Yuriko Otorii</h1>
+                <h4 ref={occupationElem} className="text-3xl md:text-6xl font-bold my-3 mb-8 md:mb-8">Front-end developer</h4>
                 <div className="flex gap-4">
                     <a
                         href="https://github.com/Yuriko-Otorii"
                         className="github-link"
                         target="_blank"
                     >
-                        <i className="fa-brands fa-github fa-lg title-github-icon text-3xl md:text-5xl"></i>
+                        <i ref={githubIcon} className="fa-brands fa-github fa-lg title-github-icon text-3xl md:text-5xl"></i>
                     </a>
                     <a href="" target="_blank">
-                        <i className="fa-brands fa-linkedin fa-lg title-linkedin-icon text-3xl md:text-5xl"></i>
+                        <i ref={linketinIcon} className="fa-brands fa-linkedin fa-lg title-linkedin-icon text-3xl md:text-5xl"></i>
                     </a>
                 </div>  
             </div>
-            <nav className="flex flex-col items-center mt-10 text-2xl md:text-4xl md:mb-10">
-                <HashLink smooth to='/home#projects' className='my-2 font-bold'>Projects</HashLink>
-                <HashLink smooth to='/home#about-me' className='my-2 font-bold'>About me</HashLink>
-                <HashLink smooth to='/home#contacts' className='my-2 font-bold'>Contact</HashLink>
+            <nav className="flex flex-col items-center my-4 text-2xl md:text-4xl md:mb-10">
+                <HashLink ref={navItem1} smooth to='#projects' className='my-2 font-bold duration-100 transition transform hover:-translate-y-0.5'>Projects</HashLink>
+                <HashLink ref={navItem2} smooth to='#about-me' className='my-2 font-bold duration-100 transition transform hover:-translate-y-0.5'>About me</HashLink>
+                <HashLink ref={navItem3} smooth to='#contacts' className='my-2 font-bold duration-100 transition transform hover:-translate-y-0.5'>Contact</HashLink>
             </nav>
-            <HashLink to='/homeprojects' className='mt-5'>
+            <HashLink ref={downArrow} smooth to='#projects' className='animate-bounce mt-5'>
                 <i className="fa-solid fa-arrow-down fa-2xl md:text-6xl"></i>
             </HashLink>
         </div>

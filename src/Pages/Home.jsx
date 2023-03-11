@@ -7,7 +7,9 @@ const Header = lazy(() => import('../Components/Header'))
 const ProjectsSection = lazy(() => import('../Components/ProjectsSection'))
 const AboutSection = lazy(() => import('../Components/AboutSection'))
 const ContactSection = lazy(() => import('../Components/ContactSection'))
+const TopPageIcon = lazy(() => import('../Components/TopPageIcon'))
 const Footer = lazy(() => import('../Components/Footer'))
+const HeaderNavigation = lazy(() => import('../Components/HeaderNavigation'))
 
 const Home = () => {
   const [mode, setMode] = useState(false)
@@ -23,10 +25,12 @@ const Home = () => {
       ></div>
 
       <Header setMode={setMode} mode={mode}/>
-      
-      <ProjectsSection />
-      <AboutSection />
-      <ContactSection />
+      <HeaderNavigation />
+
+      <ProjectsSection mode={mode} />
+      <AboutSection mode={mode} />
+      <ContactSection mode={mode} />
+      <TopPageIcon mode={mode} />
       
       <Footer />
     </div>

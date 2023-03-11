@@ -3,11 +3,11 @@ import React from 'react'
 import typescriptIcon from "../images/icons8-typescript.svg";
 
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ mode }) => {
   return (
     <section className="flex flex-col justify-center items-center mt-20" id="projects">
       <h1 className='text-4xl font-bold mb-4 md:text-5xl'>Projects</h1>
-      <div className="w-11/12 h-auto bg-gray-100 bg-opacity-20 rounded-lg p-5">
+      <div className={mode? "w-11/12 h-auto bg-gray-500 bg-opacity-50 rounded-lg p-5": "w-11/12 h-auto bg-white bg-opacity-20 rounded-lg p-5"}>
         <ul className="project-list">
           <li className="mb-10">
             <div className="flex flex-col md:flex-row">

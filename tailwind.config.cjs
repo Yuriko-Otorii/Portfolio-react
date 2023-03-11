@@ -16,7 +16,45 @@ module.exports = {
         'moon-icon': "url('./images/moon-icon.png')",
         'ts-icon': "url('./images/typescript-icon.png')",
         'resume-img': "url('./images/Resume.png')",
-       })
+      }),
+      animation: {
+        'upMove': "FrameInAnimation 0.5s forwards",
+        'downMove': "FrameOutAnimation 0.5s forwards",
+        'floating': "floating 1s infinite ease-in-out .8s alternate",
+      },
+      keyframes: {
+        FrameOutAnimation: {
+          '0%': { 
+            opacity: "1",
+            transform: "translateY(0)"
+           },
+          '100%': { 
+            opacity: "1",
+            transform: "translateY(-200px)"
+           },
+        },
+        FrameInAnimation: {
+          '0%': { 
+            opacity: "1",
+            transform: "translateY(-200px)"
+           },
+          '100%': { 
+            opacity: "1",
+            transform: "translateY(0)"
+           },
+        },
+        floating :{
+          "0%": {
+            transform: "translate(0, 0)"
+          },
+          "50%": {
+            transform: "translate(0, -7px)"
+          },
+          "100%": {
+            transform: "translate(0, 0)"
+          }
+        }
+      }
     },
   },
   plugins: [],

@@ -24,10 +24,12 @@ function App() {
             flexDirection: "column",
             alignItems: "center",
           }}
-        >
+        > 
+        <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
           <h1 style={{ textAlign: "center", margin: "2rem auto" }}>
             Loading...
           </h1>
+        </svg>
         </div>
       }
     >
