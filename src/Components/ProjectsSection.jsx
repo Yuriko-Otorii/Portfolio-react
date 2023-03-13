@@ -19,8 +19,15 @@ const ProjectsSection = ({ mode }) => {
               </div>
 
               <div className='flex flex-col md:flex-1 md:p-10'>
-                <div className="project-title-container">
-                  <h3 className="text-3xl md:text-4xl font-bold text-center mb-3">Dog picture collection</h3>
+                <div className="flex items-center justify-center mb-3">
+                  <h3 className="text-3xl md:text-4xl font-bold text-center">Dog picture collection</h3>
+                  <a
+                    href="https://github.com/Yuriko-Otorii/Dog-picture-collection"
+                    className="cursor-pointer github-link flex justify-center items-center gap-4 my-3"
+                    target="_blank"
+                  >
+                    <i className="animate-swaing fa-brands fa-github fa-lg title-icon text-3xl ml-2 md:text-5xl md:hover:text-gray-800"></i>
+                  </a>
                 </div>
 
                 <div className="cursor-pointer flex justify-center items-center bg-white h-40 md:hidden">
@@ -47,16 +54,6 @@ const ProjectsSection = ({ mode }) => {
                     <i className="fa-brands fa-sass text-2xl md:text-4xl"></i>
                   </div>
                 </div>
-                <div className="cursor-pointer flex justify-center mt-5">
-                  <a
-                    href="https://github.com/Yuriko-Otorii"
-                    className="github-link flex justify-center items-center gap-4 my-3"
-                    target="_blank"
-                  >
-                    <i className="fa-brands fa-github fa-lg title-icon text-4xl md:text-5xl"></i>
-                    <p className="check-github text-xl md:text-3xl">Check the code!</p>
-                  </a>
-                </div>
               </div>
             </div>
           </li>
@@ -65,8 +62,15 @@ const ProjectsSection = ({ mode }) => {
             <div className="flex flex-col md:flex-row">
 
               <div className='flex flex-col md:flex-1 md:p-10'>
-                <div className="project-title-container">
-                  <h3 className="text-3xl md:text-4xl font-bold text-center mb-3">Bookmark manager</h3>
+                <div className="flex items-center justify-center mb-3">
+                  <h3 className="text-3xl md:text-4xl font-bold text-center">Bookmark manager</h3>
+                  <a
+                    href="https://github.com/Yuriko-Otorii"
+                    className="cursor-pointer github-link flex justify-center items-center gap-4 my-3"
+                    target="_blank"
+                  >
+                    <i className="animate-swaing fa-brands fa-github fa-lg title-icon text-3xl ml-2 md:text-5xl md:hover:text-gray-800"></i>
+                  </a>
                 </div>
 
                 <div className="cursor-pointer flex justify-center items-center bg-white h-40 md:hidden">
@@ -87,16 +91,6 @@ const ProjectsSection = ({ mode }) => {
                     <i className="fa-brands fa-square-js text-2xl md:text-4xl"></i>
                     <i className="fa-brands fa-sass text-2xl md:text-4xl"></i>
                   </div>
-                </div>
-                <div className="cursor-pointer flex justify-center mt-5">
-                  <a
-                    href="https://github.com/Yuriko-Otorii"
-                    className="github-link flex justify-center items-center gap-4 my-3"
-                    target="_blank"
-                  >
-                    <i className="fa-brands fa-github fa-lg title-icon text-4xl md:text-5xl"></i>
-                    <p className="check-github text-xl md:text-3xl">Check the code!</p>
-                  </a>
                 </div>
               </div>
 

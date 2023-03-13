@@ -23,7 +23,7 @@ const AboutSection = ({ mode }) => {
             <h3 className="text-2xl md:text-4xl font-bold text-center">
               Hi, I am Yuriko!
             </h3>
-            <p className="text-xl md:text-3xl my-4">
+            <p className="text-xl md:text-3xl my-4 md:my-20">
               A front-end developer with a passion for user experience and
               interaction design. Learning and growing as a developer is
               important to me and I am currently working on a project as a front-end developer.
@@ -36,7 +36,7 @@ const AboutSection = ({ mode }) => {
               <h3 className="text-xl mt-5 md:mt-0 md:text-3xl md:mb-2">
                 Skill sets
               </h3>
-              <div className="flex items-center justify-center gap-1 md:gap-2">
+              <div className="flex items-center justify-center gap-1 md:gap-3 md:gap-2">
                 <i className="fa-brands fa-lg md:text-4xl fa-html5"></i>
                 <i className="fa-brands fa-lg md:text-4xl fa-css3-alt"></i>
                 <i className="fa-brands fa-lg md:text-4xl fa-sass"></i>
@@ -73,7 +73,7 @@ const AboutSection = ({ mode }) => {
               className="hidden md:block cursor-pointer flex justify-center mt-5"
               target="_blank"
             >
-              <button className=" border-2 rounded-lg py-1 px-4 mt-2 text-3xl hover:bg-white hover:text-gray-500 duration-300">
+              <button className=" border-2 rounded-lg py-1 px-4 mt-2 text-3xl hover:bg-white hover:text-gray-500 duration-200">
                 Read resume
               </button>
             </a>

@@ -21,6 +21,7 @@ module.exports = {
         'upMove': "FrameInAnimation 0.5s forwards",
         'downMove': "FrameOutAnimation 0.5s forwards",
         'floating': "floating 1s infinite ease-in-out .8s alternate",
+        'swaing': "swaing 2s linear infinite"
       },
       keyframes: {
         FrameOutAnimation: {
@@ -29,13 +30,13 @@ module.exports = {
             transform: "translateY(0)"
            },
           '100%': { 
-            opacity: "1",
+            opacity: "0",
             transform: "translateY(-200px)"
            },
         },
         FrameInAnimation: {
           '0%': { 
-            opacity: "1",
+            opacity: "0",
             transform: "translateY(-200px)"
            },
           '100%': { 
@@ -52,6 +53,17 @@ module.exports = {
           },
           "100%": {
             transform: "translate(0, 0)"
+          }
+        },
+        swaing: {
+          "0%": {
+              transform: "rotate(10deg)"
+          },
+          "50%": {
+              transform: "rotate(-10deg)"
+          },
+          "100%": {
+            transform: "rotate(10deg)"
           }
         }
       }

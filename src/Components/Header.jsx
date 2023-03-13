@@ -35,7 +35,7 @@ const Header = ({ mode, setMode }) => {
                 </div>
             </div>
         </div>
-        <div className="flex flex-col items-center pt-14">
+        <div className="flex flex-col items-center pt-10">
             <div className="flex flex-col items-center">
                 <h1 ref={nameElem} className="text-6xl md:text-9xl font-bold">Yuriko Otorii</h1>
                 <h4 ref={occupationElem} className="text-3xl md:text-6xl font-bold my-3 mb-8 md:mb-8">Front-end developer</h4>
@@ -45,17 +45,17 @@ const Header = ({ mode, setMode }) => {
                         className="github-link"
                         target="_blank"
                     >
-                        <i ref={githubIcon} className="fa-brands fa-github fa-lg title-github-icon text-3xl md:text-5xl"></i>
+                        <i ref={githubIcon} className="cursor-pointer fa-brands fa-github fa-lg title-github-icon text-3xl md:text-5xl dulation-100 hover:text-gray-700"></i>
                     </a>
-                    <a href="" target="_blank">
-                        <i ref={linketinIcon} className="fa-brands fa-linkedin fa-lg title-linkedin-icon text-3xl md:text-5xl"></i>
+                    <a href="https://linkedin.com/in/yuriko-127381256" target="_blank">
+                        <i ref={linketinIcon} className="cursor-pointer fa-brands fa-linkedin fa-lg title-linkedin-icon text-3xl md:text-5xl dulation-100 hover:text-gray-700"></i>
                     </a>
                 </div>  
             </div>
             <nav className="flex flex-col items-center my-4 text-2xl md:text-4xl md:mb-10">
-                <HashLink ref={navItem1} smooth to='#projects' className='my-2 font-bold duration-100 transition transform hover:-translate-y-0.5'>Projects</HashLink>
-                <HashLink ref={navItem2} smooth to='#about-me' className='my-2 font-bold duration-100 transition transform hover:-translate-y-0.5'>About me</HashLink>
-                <HashLink ref={navItem3} smooth to='#contacts' className='my-2 font-bold duration-100 transition transform hover:-translate-y-0.5'>Contact</HashLink>
+                <HashLink ref={navItem1} smooth to='#projects' className='cursor-pointer my-2 font-bold hover:text-gray-700'>Projects</HashLink>
+                <HashLink ref={navItem2} smooth to='#about-me' className='cursor-pointer my-2 font-bold hover:text-gray-700'>About me</HashLink>
+                <HashLink ref={navItem3} smooth to='#contacts' className='cursor-pointer my-2 font-bold hover:text-gray-700'>Contact</HashLink>
             </nav>
             <HashLink ref={downArrow} smooth to='#projects' className='animate-bounce mt-5'>
                 <i className="fa-solid fa-arrow-down fa-2xl md:text-6xl"></i>

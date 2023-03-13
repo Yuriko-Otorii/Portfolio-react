@@ -25,7 +25,7 @@ const Home = () => {
       ></div>
 
       <Header setMode={setMode} mode={mode}/>
-      <HeaderNavigation />
+      <HeaderNavigation mode={mode}/>
 
       <ProjectsSection mode={mode} />
       <AboutSection mode={mode} />

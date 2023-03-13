@@ -1,41 +1,50 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { init, send  } from 'emailjs-com'
+
+const { VITE_MAILJS_ACOUNT_KEY: accountKey,
+        VITE_MAILJS_SERVICE_KEY: serviceKey,
+        VITE_MAILJS_TEMPATE_KEY: templateKey
+      } = import.meta.env
 
 const ContactSection = ({ mode }) => {
+  
   const [fName, setFName] = useState("")
   const [lName, setLName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
 
-  const handleSubmit = async () => {
-    const templateVariables = {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    sendMessage()
+  }
+
+  const sendMessage = () => {
+    if (
+      accountKey !== undefined &&
+      serviceKey !== undefined &&
+      templateKey !== undefined
+      ) {
+      init(accountKey);
+  
+      const param = {
         fName: fName,
         lName: lName,
         email: email,
-        message: message
+        message,
       };
 
-      try {
-          await emailjs.send(
-              'service_KEY',
-              'template_KEY',
-              templateVariables,
-          );
+      send(serviceKey, templateKey, param).then(() => {
+        window.alert('Your message is successfully sent!');
     
-          fName = '';
-          lName = '';
-          email = '';
-          message = '';
-      
-          //msg of 'Successfully sent'
-          
-      } catch (error) {
-          
-      }
+        setFName('');
+        setLName('');
+        setEmail('');
+        setMessage('');
+      });
+    }
   }
 
-  
-
-
+  const disableCondition = fName === '' || lName === '' || email === '' || message === '';
 
 
   return (
@@ -44,41 +53,41 @@ const ContactSection = ({ mode }) => {
         <div className={mode? "w-11/12 h-auto bg-gray-500 bg-opacity-50 rounded-lg p-5": "w-11/12 h-auto bg-white bg-opacity-20 rounded-lg p-5"}>
           <p className="text-2xl md:text-4xl font-bold text-center mb-5">I look forwad to hering from you!</p>
           <div className="contact-section-container">
-            <form action="mailto:snnp.ad.pnts@gmail.com" className="flex flex-col items-center">
-              <label className="block mb-5 w-full md:w-2/3 flex flex-col items-center">
+            <form onSubmit={handleSubmit} className="flex flex-col items-center">
+              <label className="block mb-5 w-full md:w-2/3 text-lg flex flex-col items-center">
                 <span className='mr-auto ml-4 md:ml-7 md:text-2xl'>First name</span>
                 <input
                   type="text"
-                  className="block w-11/12 mt-1 p-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-11/12 mt-1 p-1 border-gray-300 text-gray-900 text-lg md:text-2xl rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   value={fName}
                   onChange={(e) => setFName(e.target.value)}
                   required
                 />
               </label>
-              <label className="block mb-5 w-full md:w-2/3 flex flex-col items-center">
+              <label className="block mb-5 w-full md:w-2/3 text-lg flex flex-col items-center">
                 <span className='mr-auto ml-4 md:ml-7 md:text-2xl'>Last name</span>
                 <input
                   type="text"
-                  className="block w-11/12 mt-1 p-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-11/12 mt-1 p-1 border-gray-300 text-gray-900 text-lg md:text-2xl rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   value={lName}
                   onChange={(e) => setLName(e.target.value)}
                   required
                 />
               </label>
-              <label className="block mb-5 w-full md:w-2/3 flex flex-col items-center">
+              <label className="block mb-5 w-full md:w-2/3 text-lg flex flex-col items-center">
                 <span className='mr-auto ml-4 md:ml-7 md:text-2xl'>Email address</span>
                 <input
                   type="email"
-                  className="block w-11/12 mt-1 p-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-11/12 mt-1 p-1 border-gray-300 text-gray-900 text-lg md:text-2xl rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </label>
-              <label className="block mb-5 w-full md:w-2/3 flex flex-col items-center">
+              <label className="block mb-5 w-full md:w-2/3 text-lg flex flex-col items-center">
                 <span className='mr-auto ml-4 md:ml-7 md:text-2xl'>Message</span>
                 <textarea
-                  className="block w-11/12 mt-1 p-1 bord  er-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-11/12 mt-1 p-1 border-gray-300 text-gray-900 text-lg md:text-2xl rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   rows="3"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -88,7 +97,8 @@ const ContactSection = ({ mode }) => {
               <div className="mb-6">
                 <button
                   type="submit"
-                  className="bg-gray-500 border-2 border-gray-300 rounded-lg py-0.5 px-8 md:py-1 md:px-16 mt-2 text-xl md:text-3xl hover:bg-gray-400"
+                  disabled={disableCondition}
+                  className="border-2 border-white rounded-lg py-0.5 px-8 md:py-1 md:px-16 mt-2 text-xl md:text-3xl bg-white text-gray-500 duration-200 disabled:bg-transparent disabled:text-white hover:translate hover:duration-100 transition transform hover:-translate-y-0.5"
                 >
                   Send
                 </button>
@@ -97,29 +107,11 @@ const ContactSection = ({ mode }) => {
             <div className='flex flex-col items-center'>
               <div className='text-2xl'>Or</div>
               <a href="mailto:snnp.ad.pnts@gmail.com">
-                <button className="bg-gray-500 border-2 border-gray-300 rounded-lg py-0.5 px-8 md:py-1 md:px-16 mt-2 text-xl md:text-3xl hover:bg-gray-400">
+                <button className="border-2 border-white rounded-lg py-0.5 px-6 md:py-1 md:px-16 mt-2 text-xl md:text-3xl hover:bg-white hover:text-gray-500 duration-200">
                   <i className="fa-regular fa-envelope"></i> Open your mailer
                 </button>
               </a>
             </div>
-            {/* <div className="btn-container">
-              <p>or</p>
-              <a href="mailto:snnp.ad.pnts@gmail.com">
-                <button className="mailer-open-btn">
-                  <i className="fa-regular fa-envelope"></i> Open your mailer
-                </button>
-              </a>
-            </div> */}
-            {/* <div className="email-copy-container">
-                <p className="email-title-msg">Copy email from here.</p>
-                <input
-                  className="email-address"
-                  type="text"
-                  id="email"
-                  value="snnp.ad.pnts@gmail.com"
-                />
-                <button className="email-copy-btn email-address">Copy email</button>
-              </div> */}
           </div>
         </div>
       </section>
