@@ -26,14 +26,14 @@ const TopPageIcon = ({ mode }) => {
             
             {isVisible? mode 
             ?   <>
-                    <p className="mb-2 md:text-2xl">Page Top</p>
-                    <img className="animate-floating moon-icon w-9 h-9 md:w-16 md:h-16 mx-auto" alt="Moon icon" src={moonIcon} />            
+                    <p className="mb-2 md:text-xl">Page Top</p>
+                    <img className="animate-floating moon-icon w-9 h-9 md:w-12 md:h-12 mx-auto" alt="Moon icon" src={moonIcon} />            
                 </>  
             :   <>
                     <p className="mb-2 md:text-2xl">Page Top</p>
                     <div className="animate-floating flex flex-col justify-center items-center">
-                        <div className="w-8 h-8 md:w-12 md:h-12 bg-sky-300 rounded-full mx-auto"></div>
-                        <div className="clip-balloon-tail w-2 h-2 md:w-3 md:h-3 bg-sky-300"></div>
+                        <div className="w-8 h-8 md:w-10 md:h-10 bg-sky-300 rounded-full mx-auto"></div>
+                        <div className="clip-balloon-tail w-1 h-1 md:w-2 md:h-2 bg-sky-300"></div>
                         <div className="h-3 md:h-5 bg-sky-300 border border-sky-300"></div>
                     </div>
                 </>  

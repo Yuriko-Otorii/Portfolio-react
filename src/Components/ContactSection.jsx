@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { init, send  } from 'emailjs-com'
+import { init, send } from 'emailjs-com'
 
 const { VITE_MAILJS_ACOUNT_KEY: accountKey,
         VITE_MAILJS_SERVICE_KEY: serviceKey,
@@ -98,7 +98,7 @@ const ContactSection = ({ mode }) => {
                 <button
                   type="submit"
                   disabled={disableCondition}
-                  className="border-2 border-white rounded-lg py-0.5 px-8 md:py-1 md:px-16 mt-2 text-xl md:text-3xl bg-white text-gray-500 duration-200 disabled:bg-transparent disabled:text-white hover:translate hover:duration-100 transition transform hover:-translate-y-0.5"
+                  className="border-2 border-white rounded-lg py-0.5 px-8 md:py-1 md:px-16 mt-2 text-xl md:text-3xl bg-white text-gray-500 duration-200 disabled:bg-transparent disabled:text-gray-500 disabled:border-gray-500 hover:translate hover:duration-100 transition transform disabled:translate-y-0 hover:-translate-y-0.5"
                 >
                   Send
                 </button>

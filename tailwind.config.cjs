@@ -66,7 +66,7 @@ module.exports = {
             transform: "rotate(10deg)"
           }
         }
-      }
+      },
     },
   },
   plugins: [],
