@@ -3,9 +3,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export const sectionAnimation = (navElem) => {
-    // ScrollTrigger.create({
-    //     trigger: {navElem},
-    //     start: "top 90%",
-    //     end: "top 10%"
-    // })
+    gsap.from(
+        navElem, {
+            scrollTrigger: {
+                trigger: navElem,
+                start: "top 80%",
+            },
+            duration: 1.2,
+            y: 15, 
+            opacity: 0,
+            ease: "power2.out"
+        }
+    )
 }

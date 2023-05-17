@@ -38,7 +38,7 @@ const Header = ({ mode, setMode }) => {
         <div className="flex flex-col items-center justify-around pt-10 h-screen">
             <div className="flex flex-col items-center">
                 <h1 ref={nameElem} className="text-6xl md:text-8xl font-bold">Yuriko Otorii</h1>
-                <h4 ref={occupationElem} className="text-3xl md:text-5xl font-bold my-3 mb-8 md:mb-12">Front-end developer</h4>
+                <h4 ref={occupationElem} className="text-3xl md:text-5xl font-bold my-3 mb-8 md:mb-12">Full-stack developer</h4>
                 <div className="flex gap-4">
                     <a
                         href="https://github.com/Yuriko-Otorii"

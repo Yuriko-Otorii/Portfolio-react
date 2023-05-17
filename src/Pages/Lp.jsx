@@ -1,10 +1,19 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom'
 
 const Lp = () => {
-  const [rotationDegrees, setRotateDegrees] = useState(80)
+  const [leftRotationDegrees, setLeftRotateDegrees] = useState(0)
+  const [rightRotationDegrees, setRighttRotateDegrees] = useState(0)
   const leftEye = useRef(null)
   const rightEye = useRef(null)
+
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [leftRotationDegrees, rightRotationDegrees]);
 
 
   const handleMouseMove = (event) => {
@@ -14,30 +23,24 @@ const Lp = () => {
     const mouseX = event.clientX
     const mouseY = event.clientY
     let radian = Math.atan2(mouseX - eyeX, mouseY - eyeY);
-    setRotateDegrees(radian * (180 / Math.PI) * -1 + 180)
-    // console.log(rotationDegrees);
+    setLeftRotateDegrees(radian * (180 / Math.PI) * -1 + 80)
+    setRighttRotateDegrees(radian * (180 / Math.PI) * -1 + 250)
   };
+
+  
 
   return (
     <>
       <div id="cursor" className="cursor"></div>
       <div className="w-screen h-screen flex flex-col items-center justify-center" onMouseMove={handleMouseMove}>
-      {/* <div className="w-screen h-screen animate-floating flex flex-col items-center justify-center" onMouseMove={handleMouseMove}> */}
         <Link to="/home">
           <div className="cursor-pointer w-36 h-36 rounded-full bg-sky-300 relative opacity-60">
-            <div className="flex absolute top-[43%] left-1/2 -translate-x-1/2	-translate-y-1/2">
-              <div ref={leftEye} className={`w-12 h-[3.1rem] rounded-full bg-gray-100 relative rotate-[${rotationDegrees}deg]`}>
-              {/* <div ref={leftEye} className={`w-12 h-[3.1rem] rounded-full bg-gray-100 relative rotate-[${rotationDegrees}deg]`}> */}
-                <div className={`w-[1.4rem] h-[1.4rem] rounded-full bg-black z-50`}></div>
-                {/* <div ref={leftEye} className={`w-[1.4rem] h-[1.4rem] rounded-full bg-black z-50 absolute top-[20%] left-[40%] rotate-[${rotationDegrees}deg]`}></div> */}
-                {/* <div className={`w-[1.4rem] h-[1.4rem] rounded-full bg-black z-50 absolute top-[${leftEyePosition.y}] left-[${leftEyePosition.x}]`}></div> */}
-                <div className="changed-left-eyeball changed-eyeballs"></div>
+            <div className="flex gap-[.1rem] absolute top-[2rem] left-[1.15rem]">
+              <div ref={leftEye} className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full" style={{ transform: `rotate(${leftRotationDegrees}deg)`}}>
+                <div className="absolute rounded-full w-[1.7rem] h-[1.7rem] bg-gray-900 top-[.7rem] right-[.2rem]"></div>
               </div>
-              <div ref={rightEye} className={`w-12 h-[3.1rem] rounded-full bg-gray-100 relative rotate-[${rotationDegrees}deg]`}>
-                <div className={`w-[1.4rem] h-[1.4rem] rounded-full bg-black z-50 `}></div>
-                {/* <div ref={rightEye} className={`w-[1.4rem] h-[1.4rem] rounded-full bg-black z-50 absolute top-[20%] right-[40%] rotate-[${rotationDegrees}deg]`}></div> */}
-                {/* <div className={`w-[1.4rem] h-[1.4rem] rounded-full bg-black z-50 absolute top-[${rightEyePosition.y}] right-[${rightEyePosition.x}]`}></div> */}
-                <div className="changed-right-eyeball changed-eyeballs"></div>
+              <div ref={rightEye} className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full" style={{ transform: `rotate(${rightRotationDegrees}deg)`}}>
+                <div className="absolute rounded-full w-[1.7rem] h-[1.7rem] bg-gray-900 top-[.7rem] left-[.2rem]"></div>
               </div>
             </div>
           </div>

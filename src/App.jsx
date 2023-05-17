@@ -8,8 +8,9 @@ const Home = lazy(() => import("./Pages/Home"));
 const Lp = lazy(() => import("./Pages/Lp"));
 
 const router = createBrowserRouter([
-  {path: '/', element: <Lp />},
-  {path: '/home', element: <Home />},
+  {path: '/', element: <Home />},
+  {path: '/lp', element: <Lp />},
+  // {path: '/home', element: <Home />},
 ])
 
 

@@ -1,5 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { init, send } from 'emailjs-com'
+
+import { sectionAnimation } from './animations/sectionAnimation'
+
 
 const { VITE_MAILJS_ACOUNT_KEY: accountKey,
         VITE_MAILJS_SERVICE_KEY: serviceKey,
@@ -7,11 +10,15 @@ const { VITE_MAILJS_ACOUNT_KEY: accountKey,
       } = import.meta.env
 
 const ContactSection = ({ mode }) => {
-  
   const [fName, setFName] = useState("")
   const [lName, setLName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const sectionwrapper = useRef(null)
+  
+  useEffect(() => {
+    sectionAnimation(sectionwrapper.current)
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -50,7 +57,7 @@ const ContactSection = ({ mode }) => {
   return (
     <section className="flex flex-col justify-center items-center mt-20" id="contacts">
         <h1 className='text-4xl font-bold mb-4 md:text-5xl'>Contact</h1>
-        <div className={mode? "w-11/12 h-auto bg-gray-500 bg-opacity-50 rounded-lg p-5": "w-11/12 h-auto bg-white bg-opacity-20 rounded-lg p-5"}>
+        <div ref={sectionwrapper} className={mode? "w-11/12 h-auto bg-gray-500 bg-opacity-50 rounded-lg p-5": "w-11/12 h-auto bg-white bg-opacity-20 rounded-lg p-5"}>
           <p className="text-2xl md:text-4xl font-bold text-center mb-5">I look forwad to hering from you!</p>
           <div className="contact-section-container">
             <form onSubmit={handleSubmit} className="flex flex-col items-center">
