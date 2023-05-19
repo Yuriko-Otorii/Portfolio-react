@@ -4,11 +4,16 @@ import { Link } from 'react-router-dom'
 const Lp = () => {
   const [leftRotationDegrees, setLeftRotateDegrees] = useState(0)
   const [rightRotationDegrees, setRighttRotateDegrees] = useState(0)
+  const [normalEyeColor, setNormalEyeColor] = useState("bg-gray-900")
+  const [hoveredEyeColor, setHoveredEyeColor] = useState("white")
   const leftEye = useRef(null)
   const rightEye = useRef(null)
+  const balloonBody = useRef(null)
 
   useEffect(() => {
     document.addEventListener("mousemove", handleMouseMove);
+    // document.addEventListener("mouseover", handleMouseMove);
+    
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
@@ -25,22 +30,26 @@ const Lp = () => {
     let radian = Math.atan2(mouseX - eyeX, mouseY - eyeY);
     setLeftRotateDegrees(radian * (180 / Math.PI) * -1 + 80)
     setRighttRotateDegrees(radian * (180 / Math.PI) * -1 + 250)
-  };
+  };  
 
-  
+  const handleMouseOver = (event) => {
+    console.log(leftEye.current);
+  }
 
   return (
     <>
       <div id="cursor" className="cursor"></div>
       <div className="w-screen h-screen flex flex-col items-center justify-center" onMouseMove={handleMouseMove}>
         <Link to="/home">
-          <div className="cursor-pointer w-36 h-36 rounded-full bg-sky-300 relative opacity-60">
+          <div ref={balloonBody} className="cursor-pointer w-36 h-36 rounded-full bg-sky-300 relative opacity-60">
             <div className="flex gap-[.1rem] absolute top-[2rem] left-[1.15rem]">
               <div ref={leftEye} className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full" style={{ transform: `rotate(${leftRotationDegrees}deg)`}}>
-                <div className="absolute rounded-full w-[1.7rem] h-[1.7rem] bg-gray-900 top-[.7rem] right-[.2rem]"></div>
+                <div className={`absolute rounded-full w-[1.7rem] h-[1.7rem] top-[.7rem] right-[.2rem] ${normalEyeColor}`}></div>
+                <div className={`absolute top-[.7rem] right-[.2rem]`}></div>
               </div>
               <div ref={rightEye} className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full" style={{ transform: `rotate(${rightRotationDegrees}deg)`}}>
-                <div className="absolute rounded-full w-[1.7rem] h-[1.7rem] bg-gray-900 top-[.7rem] left-[.2rem]"></div>
+                <div className={`absolute rounded-full w-[1.7rem] h-[1.7rem] top-[.7rem] left-[.2rem] ${normalEyeColor}`}></div>
+                <div className={`absolute top-[.7rem] left-[.2rem]`}></div>
               </div>
             </div>
           </div>

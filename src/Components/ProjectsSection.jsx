@@ -45,7 +45,7 @@ const ProjectsSection = ({ mode }) => {
                     Appointly
                   </h3>
                   <a
-                    href="https://github.com/Hikari7/Appointly"
+                    href="https://github.com/Yuriko-Otorii/Appointly"
                     className="cursor-pointer github-link flex justify-center items-center gap-4 my-3"
                     target="_blank"
                   >
