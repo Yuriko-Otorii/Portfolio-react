@@ -49,7 +49,7 @@ const Lp = () => {
     <>
       <div id="cursor" className="cursor"></div>
       <div className="w-screen h-screen flex flex-col items-center justify-center" onMouseMove={handleMouseMove}>
-        {/* <Link to="/"> */}
+        <Link to="/">
           <div ref={balloonBody} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="cursor-pointer w-36 h-36 rounded-full bg-sky-300 relative opacity-60">
             <div className="flex gap-[.1rem] absolute top-[2rem] left-[1.15rem]">
               <div ref={leftEye} className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full" style={{ transform: `rotate(${leftRotationDegrees}deg)`}}>
@@ -75,17 +75,19 @@ const Lp = () => {
                 </div>
               </div>
             </div>
+            <div className="absolute top-[-75%] left-[100%] right-2">
+              <div className='relative'>
+                <div className="w-28 h-16 border border-gray-700 rounded-full flex justify-center items-center">
+                  <p className="text-2xl">Pop me!</p>
+                </div>
+                <div className="w-6 h-6 border border-gray-700 rounded-full absolute top-[105%] left-[0%]"></div>
+                <div className="w-4 h-4 border border-gray-700 rounded-full absolute top-[150%] right-[0%]"></div>
+              </div>
+            </div>
           </div>
-        {/* </Link> */}
+        </Link>
         <div className="w-6 h-4 opacity-60 bg-sky-300 clip-balloon-tail"></div>
         <div className="h-16 border border-sky-300 bg-sky-300 opacity-60"></div>
-      </div>
-      <div className="absolute top-[24%] right-2">
-        <div className="w-28 h-16 border border-gray-700 rounded-full relative flex justify-center items-center">
-          <p className="text-2xl">Pop me!</p>
-        </div>
-        <div className="w-6 h-6 border border-gray-700 rounded-full absolute top-[100%] left-[-10%]"></div>
-        <div className="w-4 h-4 border border-gray-700 rounded-full absolute top-[140%] left-[-25%]"></div>
       </div>
     </>
   )

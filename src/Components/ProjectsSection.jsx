@@ -329,11 +329,11 @@ const ProjectsSection = ({ mode }) => {
                     tool kit and the picture data is fetched from Dog API.
                     Posted data are managed by Supabase. Managing API by using
                     redux thunk with RTK was quite challenging.
-                    <p className="my-8 text-xl lg:text-3xl"> 
+                  </p>
+                  <p className="my-8 text-xl lg:text-3xl"> 
                     *There is a issue on Supabase GitHub related to sign up 
                     and login methods. I am currently migrating to
                     other services.
-                  </p>
                   </p>
                   <div className="flex justify-center gap-2">
                     <i className="fa-brands fa-react text-3xl lg:text-4xl"></i>
