@@ -3,16 +3,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import './App.css'
 
-
 const Home = lazy(() => import("./Pages/Home"));
 const Lp = lazy(() => import("./Pages/Lp"));
 
 const router = createBrowserRouter([
-  {path: '/', element: <Home />},
+  {path: '/home', element: <Home />},
   {path: '/lp', element: <Lp />},
-  // {path: '/home', element: <Home />},
 ])
-
 
 function App() {
 
@@ -34,7 +31,7 @@ function App() {
         </div>
       }
     >
-      <RouterProvider router={router} /> 
+      <RouterProvider router={router} />
     </Suspense>
   )
 }

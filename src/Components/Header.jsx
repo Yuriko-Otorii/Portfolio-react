@@ -1,8 +1,7 @@
 import { useLayoutEffect, useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
-import { setHeaderAnimation } from './animations/headerAnimation';
-
+import { setHeaderAnimation } from './Animations/headerAnimation';
 
 const Header = ({ mode, setMode }) => {
     const nameElem = useRef(null)
@@ -16,7 +15,7 @@ const Header = ({ mode, setMode }) => {
     
     useLayoutEffect(() => {
         setHeaderAnimation(nameElem, occupationElem, linketinIcon, githubIcon, navItem1, navItem2, navItem3, downArrow)
-    }, [])  
+    }, [])
 
     const handleChangeMode= () => {
         setMode(!mode)

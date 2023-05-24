@@ -14,7 +14,7 @@ import jobHuntDetailImg from '../images/jobhunt-detail.jpg'
 import dogPicFindImg from '../images/dog-app-find.jpg'
 import dogPicProfileImg from '../images/dog-app-profile.jpg'
 
-import { sectionAnimation } from './animations/sectionAnimation'
+import { sectionAnimation } from './Animations/sectionAnimation'
 
 const ProjectsSection = ({ mode }) => {
   const sectionwrapper = useRef(null)
