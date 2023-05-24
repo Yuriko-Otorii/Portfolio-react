@@ -15,25 +15,22 @@ const Home = () => {
   const [mode, setMode] = useState(false)
 
   return (
-    <div className='text-white font-poorStory h-fit'>
-      <div
-        style={{ backgroundImage: mode? `url(${darkModeImg})`: `url(${lightModeImg})` }}
-        className={mode
-        ? "bg-cover blur-none -z-50 h-full w-screen fixed"
-        : "bg-cover blur-sm -z-50 h-full w-screen fixed"
-        }        
-      ></div>
-
-      <Header setMode={setMode} mode={mode}/>
-      <HeaderNavigation mode={mode}/>
-
-      <ProjectsSection mode={mode} />
-      <AboutSection mode={mode} />
-      <ContactSection mode={mode} />
-      <TopPageIcon mode={mode} />
-      
-      <Footer />
-    </div>
+      <div className='text-white font-poorStory h-fit'>
+        <div
+          style={{ backgroundImage: mode? `url(${darkModeImg})`: `url(${lightModeImg})` }}
+          className={mode
+          ? "bg-cover blur-none -z-50 h-full w-screen fixed"
+          : "bg-cover blur-sm -z-50 h-full w-screen fixed"
+          }        
+        ></div>
+        <Header setMode={setMode} mode={mode}/>
+        <HeaderNavigation mode={mode}/>
+        <ProjectsSection mode={mode} />
+        <AboutSection mode={mode} />
+        <ContactSection mode={mode} />
+        <TopPageIcon mode={mode} />      
+        <Footer />
+      </div>
   )
 }
 
