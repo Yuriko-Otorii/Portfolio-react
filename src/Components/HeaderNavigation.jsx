@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
-import { navbarAnimation } from './Animations/navbarAnimation';
+import { navbarAnimation } from './animations/navbarAnimation';
 
 const HeaderNavigation = ({ mode }) => {
   const [isVisible, setIsVisible] = useState(false)

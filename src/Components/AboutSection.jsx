@@ -5,7 +5,7 @@ import resumePdf from '../images/resume-pdf.pdf'
 import typescriptIcon from '../images/icons8-typescript.svg'
 import mongodbIcon from '../images/mongodb-icon.svg'
 
-import { sectionAnimation } from './Animations/sectionAnimation'
+import { sectionAnimation } from './animations/sectionAnimation'
 
 
 const AboutSection = ({ mode }) => {

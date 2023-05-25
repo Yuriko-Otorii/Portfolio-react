@@ -33,17 +33,17 @@ const Lp = () => {
   }, [leftRotationDegrees, rightRotationDegrees]);
 
   const handleMouseOver = () => {
-    leftEye.current.style.display = "none";
-    rightEye.current.style.display = "none";
-    hoveredLeftEye.current.style.display = "block";
-    hoveredRightEye.current.style.display = "block";
+    leftEye.current && (leftEye.current.style.display = "none");
+    rightEye.current && (rightEye.current.style.display = "none");
+    hoveredLeftEye.current && (hoveredLeftEye.current.style.display = "block");
+    hoveredRightEye.current && (hoveredRightEye.current.style.display = "block");
   };
 
   const handleMouseOut = () => {
-    leftEye.current.style.display = "block";
-    rightEye.current.style.display = "block";
-    hoveredLeftEye.current.style.display = "none";
-    hoveredRightEye.current.style.display = "none";
+    leftEye.current && (leftEye.current.style.display = "block");
+    rightEye.current && (rightEye.current.style.display = "block");
+    hoveredLeftEye.current && (hoveredLeftEye.current.style.display = "none");
+    hoveredRightEye.current && (hoveredRightEye.current.style.display = "none");
   };
 
   const handleMouseMove = (event) => {
@@ -96,7 +96,6 @@ const Lp = () => {
         onMouseMove={handleMouseMove}
       >
         <div className="relative">
-          {/* <Link to="/home"> */}
           <div onClick={handleClick}>
             <div
               onMouseOver={handleMouseOver}
@@ -171,7 +170,6 @@ const Lp = () => {
               </div>
             </div>
             </div>
-            {/* </Link> */}
             <div
               ref={popme}
               className="absolute top-[-70%] md:top-[-20%] left-[90%] md:left-[130%] right-2"

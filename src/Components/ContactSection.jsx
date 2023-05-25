@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { init, send } from 'emailjs-com'
 
-import { sectionAnimation } from './Animations/sectionAnimation'
+import { sectionAnimation } from './animations/sectionAnimation'
 
 
 const { VITE_MAILJS_ACOUNT_KEY: accountKey,

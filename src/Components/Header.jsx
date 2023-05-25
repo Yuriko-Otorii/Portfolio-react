@@ -17,7 +17,6 @@ const Header = ({ mode, setMode }) => {
     const { isTransition, setIsTransition } = useContext(TransitionState)
     
     useLayoutEffect(() => {
-        console.log(isTransition);
         if(isTransition){
             setHeaderAnimation(nameElem, occupationElem, linketinIcon, githubIcon, navItem1, navItem2, navItem3, downArrow, 4.0)
             setIsTransition(false)

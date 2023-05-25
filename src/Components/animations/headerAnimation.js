@@ -25,8 +25,6 @@ export const setHeaderAnimation = (
       opacity: 1,
       ease: 'power2.out',
     },
-    // 0.5,
-    // 4.0,
     durationTime
   )
   gsap.fromTo(
@@ -42,8 +40,6 @@ export const setHeaderAnimation = (
       opacity: 1,
       ease: 'power2.out',
     },
-    // 0.6,
-    // 4.2,
     (durationTime + 0.2)
   )
   gsap.fromTo(
@@ -56,8 +52,6 @@ export const setHeaderAnimation = (
       duration: 2,
       ease: 'bounce.out',
     },
-    // 0.4,
-    // 4.0,
     (durationTime - 0.1)
   )
   gsap.fromTo(
@@ -70,8 +64,6 @@ export const setHeaderAnimation = (
       duration: 2,
       ease: 'bounce.out',
     },
-    // 0.4,
-    // 4.0,
     (durationTime - 0.1)
   )
   gsap.fromTo(
@@ -87,8 +79,6 @@ export const setHeaderAnimation = (
       opacity: 1,
       ease: 'power2.out',
     },
-    // 1.5,
-    // 5.1,
     (durationTime + 1.0)
 
   )
@@ -105,8 +95,6 @@ export const setHeaderAnimation = (
       opacity: 1,
       ease: 'power2.out',
     },
-    // 1.8,
-    // 5.4,
     (durationTime + 1.3)
 
   )
@@ -123,8 +111,6 @@ export const setHeaderAnimation = (
       opacity: 1,
       ease: 'power2.out',
     },
-    // 2.1,
-    // 5.7,
     (durationTime + 1.6)
   )
   gsap.fromTo(
@@ -140,8 +126,6 @@ export const setHeaderAnimation = (
       opacity: 1,
       ease: 'power2.out',
     },
-    // 2.7,
-    // 6.3,
     (durationTime + 2.2)
   )
 }
