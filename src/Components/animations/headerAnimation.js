@@ -8,7 +8,8 @@ export const setHeaderAnimation = (
   navItem1,
   navItem2,
   navItem3,
-  downArrow
+  downArrow,
+  durationTime
 ) => {
   
   gsap.fromTo(
@@ -25,7 +26,8 @@ export const setHeaderAnimation = (
       ease: 'power2.out',
     },
     // 0.5,
-    3.4,
+    // 4.0,
+    durationTime
   )
   gsap.fromTo(
     occupationElem.current,
@@ -41,7 +43,8 @@ export const setHeaderAnimation = (
       ease: 'power2.out',
     },
     // 0.6,
-    3.7,
+    // 4.2,
+    (durationTime + 0.2)
   )
   gsap.fromTo(
     linketinIcon.current,
@@ -54,7 +57,8 @@ export const setHeaderAnimation = (
       ease: 'bounce.out',
     },
     // 0.4,
-    3.5,
+    // 4.0,
+    (durationTime - 0.1)
   )
   gsap.fromTo(
     githubIcon.current,
@@ -67,7 +71,8 @@ export const setHeaderAnimation = (
       ease: 'bounce.out',
     },
     // 0.4,
-    3.5,
+    // 4.0,
+    (durationTime - 0.1)
   )
   gsap.fromTo(
     navItem1.current,
@@ -83,7 +88,9 @@ export const setHeaderAnimation = (
       ease: 'power2.out',
     },
     // 1.5,
-    4.6,
+    // 5.1,
+    (durationTime + 1.0)
+
   )
   gsap.fromTo(
     navItem2.current,
@@ -99,7 +106,9 @@ export const setHeaderAnimation = (
       ease: 'power2.out',
     },
     // 1.8,
-    4.9,
+    // 5.4,
+    (durationTime + 1.3)
+
   )
   gsap.fromTo(
     navItem3.current,
@@ -115,7 +124,8 @@ export const setHeaderAnimation = (
       ease: 'power2.out',
     },
     // 2.1,
-    5.2,
+    // 5.7,
+    (durationTime + 1.6)
   )
   gsap.fromTo(
     downArrow.current,
@@ -131,6 +141,7 @@ export const setHeaderAnimation = (
       ease: 'power2.out',
     },
     // 2.7,
-    5.8,
+    // 6.3,
+    (durationTime + 2.2)
   )
 }

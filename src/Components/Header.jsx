@@ -1,7 +1,9 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useContext, useLayoutEffect, useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
-import { setHeaderAnimation } from './Animations/headerAnimation';
+import { setHeaderAnimation } from './animations/headerAnimation';
+
+import { TransitionState } from '../App';
 
 const Header = ({ mode, setMode }) => {
     const nameElem = useRef(null)
@@ -12,9 +14,16 @@ const Header = ({ mode, setMode }) => {
     const navItem2 = useRef(null)
     const navItem3 = useRef(null)
     const downArrow = useRef(null)
+    const { isTransition, setIsTransition } = useContext(TransitionState)
     
     useLayoutEffect(() => {
-        setHeaderAnimation(nameElem, occupationElem, linketinIcon, githubIcon, navItem1, navItem2, navItem3, downArrow)
+        console.log(isTransition);
+        if(isTransition){
+            setHeaderAnimation(nameElem, occupationElem, linketinIcon, githubIcon, navItem1, navItem2, navItem3, downArrow, 4.0)
+            setIsTransition(false)
+        }else{
+            setHeaderAnimation(nameElem, occupationElem, linketinIcon, githubIcon, navItem1, navItem2, navItem3, downArrow, 0.5)
+        }
     }, [])
 
     const handleChangeMode= () => {

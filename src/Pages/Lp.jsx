@@ -1,7 +1,8 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { setLpAnimation } from "../Components/animations/lpAnimation";
+import { TransitionState } from "../App";
 
 const Lp = () => {
   const [leftRotationDegrees, setLeftRotateDegrees] = useState(0);
@@ -16,6 +17,8 @@ const Lp = () => {
   const balloonWrapper = useRef(null);
   const popme = useRef(null);
   const navigate = useNavigate()
+  const { setIsTransition } = useContext(TransitionState)
+
 
   useLayoutEffect(() => {
     setLpAnimation(cloudElem, nameElem, positionElem, balloonWrapper, popme);
@@ -59,7 +62,8 @@ const Lp = () => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    navigate('/')
+    setIsTransition(true)
+    navigate('/home')
   }
 
   return (
@@ -92,8 +96,8 @@ const Lp = () => {
         onMouseMove={handleMouseMove}
       >
         <div className="relative">
-          <Link to="/home">
-          {/* <div onClick={handleClick}> */}
+          {/* <Link to="/home"> */}
+          <div onClick={handleClick}>
             <div
               onMouseOver={handleMouseOver}
               onMouseOut={handleMouseOut}
@@ -166,8 +170,8 @@ const Lp = () => {
                 </div>
               </div>
             </div>
-            {/* </div> */}
-            </Link>
+            </div>
+            {/* </Link> */}
             <div
               ref={popme}
               className="absolute top-[-70%] md:top-[-20%] left-[90%] md:left-[130%] right-2"
