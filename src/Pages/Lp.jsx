@@ -57,7 +57,7 @@ const Lp = () => {
     const mouseY = event.clientY;
     let radian = Math.atan2(mouseX - eyeX, mouseY - eyeY);
     setLeftRotateDegrees(radian * (180 / Math.PI) * -1 + 80);
-    setRighttRotateDegrees(radian * (180 / Math.PI) * -1 + 250);
+    setRighttRotateDegrees(radian * (180 / Math.PI) * -1 + 270);
   };
 
   const handleClick = (e) => {
@@ -70,29 +70,31 @@ const Lp = () => {
     <>
       <div
         ref={cloudElem}
-        className={`flex justify-center items-center h-[20rem] bg-gradient-to-b from-sky-300 to-white`}
+        className={`flex justify-center items-center w-screen h-[20rem] bg-gradient-to-b from-sky-300 to-white`}
       >
-        <div className="w-[20rem] h-[5rem] rounded-full relative bg-white">
+        <div className="flex flex-col items-center justify-end pb-[1rem] w-[20rem] h-[5rem] rounded-full relative bg-white">
           <div className="w-[8rem] h-[8rem] rounded-full bg-gray-600 bg-white absolute top-[-80%] left-[10%] z-10"></div>
           <div className="w-[10rem] h-[10rem] rounded-full bg-gray-600 bg-white absolute top-[-120%] left-[40%] z-10"></div>
-          <div
-            ref={nameElem}
-            className="text-[3.1rem] font-bold font-poorStory text-sky-700 absolute top-[-60%] left-[15%]  z-20"
-          >
-            Yuriko Otorii
-          </div>
-          <div
-            ref={positionElem}
-            className="text-[2rem] font-bold my-3 mb-8 md:mb-12 font-poorStory text-sky-700 absolute top-[10%] left-[13%]  z-20"
-          >
-            Full-stack developer
+          <div className="flex flex-col items-center">
+            <div
+              ref={nameElem}
+              className="text-[2.8rem] font-bold font-poorStory text-sky-700 z-20"
+            >
+              Yuriko Otorii
+            </div>
+            <div
+              ref={positionElem}
+              className="text-[1.7rem] font-bold font-poorStory text-sky-700 z-20"
+            >
+              Full-stack developer
+            </div>
           </div>
         </div>
       </div>
       <div id="cursor" className="cursor"></div>
       <div
         ref={balloonWrapper}
-        className="animate-floating z-50 flex flex-col items-center justify-center absolute top-[50%] left-[31.5%] md:left-[43%]"
+        className="animate-floating z-50 flex flex-col items-center justify-center absolute top-[60%] md:top-[50%] left-[31.5%] md:left-[43%]"
         onMouseMove={handleMouseMove}
       >
         <div className="relative">
@@ -100,12 +102,12 @@ const Lp = () => {
             <div
               onMouseOver={handleMouseOver}
               onMouseOut={handleMouseOut}
-              className="cursor-pointer w-36 h-36 rounded-full bg-sky-300 opacity-60"
+              className="cursor-pointer w-[8rem] h-[8rem] rounded-full bg-sky-300 opacity-60"
             >
-              <div className="flex gap-[.1rem] absolute top-[2rem] left-[1.15rem]">
+              <div className="flex gap-[.1rem] absolute top-[2rem] left-[.95rem]">
                 <div
                   ref={leftEye}
-                  className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full"
+                  className="flex w-[3rem] h-[3rem] bg-[#fff] rounded-full"
                   style={{ transform: `rotate(${leftRotationDegrees}deg)` }}
                 >
                   <div
@@ -115,10 +117,10 @@ const Lp = () => {
                 </div>
                 <div
                   ref={hoveredLeftEye}
-                  className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full"
+                  className="flex w-[3rem] h-[3rem] bg-[#fff] rounded-full"
                   style={{ display: "none" }}
                 >
-                  <div className={`absolute top-[.4rem] right-[.7rem]`}>
+                  <div className={`absolute top-[.4rem] right-[.4rem]`}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -137,7 +139,7 @@ const Lp = () => {
                 </div>
                 <div
                   ref={rightEye}
-                  className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full"
+                  className="flex w-[3rem] h-[3rem] bg-[#fff] rounded-full"
                   style={{ transform: `rotate(${rightRotationDegrees}deg)` }}
                 >
                   <div
@@ -147,10 +149,10 @@ const Lp = () => {
                 </div>
                 <div
                   ref={hoveredRightEye}
-                  className="flex w-[3.3rem] h-[3.3rem] bg-[#fff] rounded-full"
+                  className="flex w-[3rem] h-[3rem] bg-[#fff] rounded-full"
                   style={{ display: "none" }}
                 >
-                  <div className={`absolute top-[.4rem] left-[.7rem]`}>
+                  <div className={`absolute top-[.4rem] left-[.4rem]`}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
