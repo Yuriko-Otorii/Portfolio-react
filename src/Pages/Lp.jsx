@@ -177,11 +177,11 @@ const Lp = () => {
               className="absolute top-[-70%] md:top-[-20%] left-[90%] md:left-[130%] right-2"
             >
               <div className="relative">
-                <div className="w-28 h-[3.5rem] border border-gray-700 rounded-full flex justify-center items-center">
-                  <p className="text-2xl">Pop me!</p>
+                <div className="w-28 h-[3.5rem] border border-sky-900 rounded-full flex justify-center items-center">
+                  <p className="text-2xl font-poorStory font-bold text-sky-900">Pop me!</p>
                 </div>
-                <div className="w-6 h-6 border border-gray-700 rounded-full absolute top-[105%] left-[0%]"></div>
-                <div className="w-4 h-4 border border-gray-700 rounded-full absolute top-[150%] right-[0%]"></div>
+                <div className="w-6 h-6 border border-sky-900 rounded-full absolute top-[105%] left-[0%]"></div>
+                <div className="w-4 h-4 border border-sky-900 rounded-full absolute top-[150%] right-[0%]"></div>
               </div>
             </div>
           </div>

@@ -1,26 +1,27 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
-import typescriptIcon from '../images/icons8-typescript.svg'
-import mysqlIcon2 from '../images/mysql-letter-icon.svg'
-import tailwindIcon from '../images/tailwindcss-icon.svg'
-import mongodbIcon from '../images/mongodb-icon.svg'
+import typescriptIcon from "../images/icons8-typescript.svg";
+import mysqlIcon2 from "../images/mysql-letter-icon.svg";
+import tailwindIcon from "../images/tailwindcss-icon.svg";
+import mongodbIcon from "../images/mongodb-icon.svg";
+import postgresIcon from "../images/postgres-icon.png";
 
-import mtgAppAvailabilityImg from '../images/availability.png'
-import mtgAppGuestCalendarImg from '../images/guestcalendar.png'
-import trelloCloneImg from '../images/trello-clone.jpg'
-import trelloHomeImg from '../images/trello-home-img.jpg'
-import jobHuntImg from '../images/job-hunt-app.jpg'
-import jobHuntDetailImg from '../images/jobhunt-detail.jpg'
-import dogPicFindImg from '../images/dog-app-find.jpg'
-import dogPicProfileImg from '../images/dog-app-profile.jpg'
+import mtgAppAvailabilityImg from "../images/availability.png";
+import mtgAppGuestCalendarImg from "../images/guestcalendar.png";
+import trelloCloneImg from "../images/trello-clone.jpg";
+import trelloHomeImg from "../images/trello-home-img.jpg";
+import jobHuntImg from "../images/job-hunt-app.jpg";
+import jobHuntDetailImg from "../images/jobhunt-detail.jpg";
+import dogPicFindImg from "../images/dog-app-find.jpg";
+import dogPicProfileImg from "../images/dog-app-profile.jpg";
 
-import { sectionAnimation } from './animations/sectionAnimation'
+import { sectionAnimation } from "./animations/sectionAnimation";
 
 const ProjectsSection = ({ mode }) => {
-  const sectionwrapper = useRef(null)
+  const sectionwrapper = useRef(null);
   useEffect(() => {
-    sectionAnimation(sectionwrapper.current)
-  }, [])
+    sectionAnimation(sectionwrapper.current);
+  }, []);
 
   return (
     <section
@@ -32,8 +33,8 @@ const ProjectsSection = ({ mode }) => {
         ref={sectionwrapper}
         className={
           mode
-            ? 'w-11/12 h-auto bg-gray-500 bg-opacity-50 rounded-lg p-5'
-            : 'w-11/12 h-auto bg-white bg-opacity-20 rounded-lg p-5'
+            ? "w-11/12 h-auto bg-gray-500 bg-opacity-50 rounded-lg p-5"
+            : "w-11/12 h-auto bg-white bg-opacity-20 rounded-lg p-5"
         }
       >
         <ul className="project-list">
@@ -84,9 +85,14 @@ const ProjectsSection = ({ mode }) => {
                     can set the availability to weekly and daily so that clients
                     are only allowed to select the date within the user s
                     availability. Users can also check all the meetings. There
-                    are rescheduled functions and cancel functions as well.
+                    are rescheduled functions and cancel functions as well. 
                   </p>
-
+                  <p className="my-8 text-xl lg:text-3xl">
+                    The Challenging part was implemented showing the host's
+                    availability on the calendar for invitees. I needed to
+                    consider numerous things such as coloring the dates that are
+                    available, already booked dates and times, and so on.
+                  </p>
                   <div className="flex justify-center items-center gap-2">
                     <i className="fa-brands fa-react text-3xl lg:text-4xl"></i>
                     <i className="fa-brands fa-square-js text-3xl lg:text-4xl"></i>
@@ -174,6 +180,13 @@ const ProjectsSection = ({ mode }) => {
                     card and you can check near-due date tasks and high-priority
                     tasks on my page section.
                   </p>
+                  <p className="my-8 text-xl lg:text-3xl">
+                    Implementing the delete project
+                    function was one of the tough part. Each projects contain
+                    boards list, each board contain task list, tasks, each task
+                    contains comment list, I need to handle one by one
+                    asynchronously.
+                  </p>
                   <div className="flex justify-center gap-2">
                     <i className="fa-brands fa-react text-3xl lg:text-4xl"></i>
                     <i className="fa-brands fa-square-js text-3xl lg:text-4xl"></i>
@@ -203,7 +216,7 @@ const ProjectsSection = ({ mode }) => {
                     Job hunt organizer app
                   </h3>
                   <a
-                    href="https://github.com/Yuriko-Otorii/Job-hunt-organizer"
+                    href="https://github.com/Yuriko-Otorii/Job-hunt-manager-postgres"
                     className="cursor-pointer github-link flex justify-center items-center gap-4 my-3"
                     target="_blank"
                   >
@@ -212,7 +225,7 @@ const ProjectsSection = ({ mode }) => {
                 </div>
                 <a
                   className="cursor-pointer flex items-center justify-center mb-5 text-xl md:text-3xl hover:text-blue-500"
-                  href="https://job-hunt-org.vercel.app"
+                  href="https://job-hunt-manager-pg.vercel.app/"
                   target="_blank"
                 >
                   <p className="underline">#Demo</p>
@@ -221,7 +234,7 @@ const ProjectsSection = ({ mode }) => {
 
                 <a
                   className="cursor-pointer flex justify-center items-center lg:hidden"
-                  href="https://job-hunt-org.vercel.app"
+                  href="https://job-hunt-manager-pg.vercel.app/"
                   target="_blank"
                 >
                   <div className="flex flex-col gap-4">
@@ -232,19 +245,20 @@ const ProjectsSection = ({ mode }) => {
 
                 <div className="discription-container">
                   <p className="my-8 text-xl lg:text-3xl">
-                    Full stack app by Express.js and EJS. Using this app, you
-                    can track which company you applied for and record the
-                    status of the process with a simple and beautiful UI. This
-                    app has many features like filtering records by status,
-                    sharing application status for motivating and so on.
+                    Full stack app by Express.js, EJS, and Postgres. Using this
+                    app, you can track which company you applied for and record
+                    the status of the process with a simple and beautiful UI.
+                    This app has many features like filtering records by status,
+                    sharing application status for motivating, and so on. The
+                    difficulty of this app was the deployment part.
                   </p>
-                  <p className="my-8 text-xl lg:text-3xl"> 
-                    *As database support, I am using Railway. However, because the
-                    free usage limit is low, I cannot use the database in the
-                    latter half of the month. I am currently migrating to
-                    other services.
+                  <p className="my-8 text-xl lg:text-3xl">
+                    In the begging, I use MySql which is a database service provided by
+                    Railway. I used the free tier so that I used up all the
+                    usage in the middle of the month. it means I could not allow
+                    to use the app until next month. To resolve this problem, I
+                    migrated to Postgres provided by Neon.
                   </p>
-
                   <div className="flex justify-center items-center gap-2">
                     <i className="fa-brands fa-square-js text-3xl lg:text-4xl"></i>
                     <i className="fa-brands fa-lg text-3xl lg:text-4xl fa-node-js"></i>
@@ -254,9 +268,9 @@ const ProjectsSection = ({ mode }) => {
                       className="w-[2.2rem] h-[2.2rem] lg:w-11 lg:h-11"
                     />
                     <img
-                      alt="Mysql icon"
-                      src={mysqlIcon2}
-                      className="w-[3rem] h-[3rem] lg:w-11 lg:h-11"
+                      alt="Postgres icon"
+                      src={postgresIcon}
+                      className="w-[2rem] h-[2rem] lg:w-10 lg:h-10"
                     />
                   </div>
                 </div>
@@ -264,7 +278,7 @@ const ProjectsSection = ({ mode }) => {
 
               <a
                 className="cursor-pointer flex justify-center items-center my-auto items-stretch hidden lg:block lg:flex-1 transition transform hover:-translate-y-1"
-                href="https://job-hunt-org.vercel.app"
+                href="https://job-hunt-manager-pg.vercel.app/"
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
@@ -330,10 +344,9 @@ const ProjectsSection = ({ mode }) => {
                     Posted data are managed by Supabase. Managing API by using
                     redux thunk with RTK was quite challenging.
                   </p>
-                  <p className="my-8 text-xl lg:text-3xl"> 
-                    *There is a issue on Supabase GitHub related to sign up 
-                    and login methods. I am currently migrating to
-                    other services.
+                  <p className="my-8 text-xl lg:text-3xl">
+                    *There is a issue on Supabase GitHub related to sign up and
+                    login methods. I am currently migrating to other services.
                   </p>
                   <div className="flex justify-center gap-2">
                     <i className="fa-brands fa-react text-3xl lg:text-4xl"></i>
@@ -351,7 +364,7 @@ const ProjectsSection = ({ mode }) => {
         </ul>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectsSection
+export default ProjectsSection;
