@@ -1,17 +1,16 @@
 import { useEffect, useRef } from "react";
 
 import typescriptIcon from "../images/icons8-typescript.svg";
-import mysqlIcon2 from "../images/mysql-letter-icon.svg";
 import tailwindIcon from "../images/tailwindcss-icon.svg";
 import mongodbIcon from "../images/mongodb-icon.svg";
 import postgresIcon from "../images/postgres-icon.png";
 
-import mtgAppAvailabilityImg from "../images/availability.png";
-import mtgAppGuestCalendarImg from "../images/guestcalendar.png";
-import trelloCloneImg from "../images/trello-clone.jpg";
-import trelloHomeImg from "../images/trello-home-img.jpg";
-import jobHuntImg from "../images/job-hunt-app.jpg";
-import jobHuntDetailImg from "../images/jobhunt-detail.jpg";
+import mtgAppAvailabilityImg from "../images/Appointly-availability-page.png";
+import mtgAppGuestCalendarImg from "../images/Appointly-guest-calendar.png";
+import trelloCloneImg from "../images/Task-Manager-board.jpg";
+import trelloHomeImg from "../images/Task-manager-home.jpg";
+import jobHuntImg from "../images/Job-Hunt-Manager-applied-list.jpg";
+import jobHuntDetailImg from "../images/Job-Hunt-Manager-detail.jpg";
 import dogPicFindImg from "../images/dog-app-find.jpg";
 import dogPicProfileImg from "../images/dog-app-profile.jpg";
 
