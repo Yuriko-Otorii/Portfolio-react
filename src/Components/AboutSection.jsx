@@ -34,7 +34,7 @@ const AboutSection = ({ mode }) => {
             <h3 className="text-2xl lg:text-4xl font-bold text-center">
               Hi, I am Yuriko!
             </h3>
-            <p className="text-xl lg:text-3xl my-4 lg:my-20">
+            <p className="text-lg lg:text-2xl my-4 lg:my-20">
               I am a full-stack developer with a passion for user experience and
               interaction design. If you are looking for a full-stack developer,
               who is confident in self-management and has a wonderful work

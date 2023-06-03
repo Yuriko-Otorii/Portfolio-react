@@ -22,6 +22,7 @@ const ProjectsSection = ({ mode }) => {
     sectionAnimation(sectionwrapper.current);
   }, []);
 
+
   return (
     <section
       className="flex flex-col justify-center items-center mt-20"
@@ -70,23 +71,25 @@ const ProjectsSection = ({ mode }) => {
                     <img
                       alt="Appointly app image"
                       src={mtgAppAvailabilityImg}
+                      className="rounded-[10px]"
                     />
                     <img
                       alt="Appointly app image"
                       src={mtgAppGuestCalendarImg}
+                      className="rounded-[10px]"
                     />
                   </div>
                 </a>
 
                 <div className="discription-container">
-                  <p className="my-8 text-xl lg:text-3xl">
+                  <p className="my-8 text-lg lg:text-2xl">
                     A MERN app that manages all your meeting schedules. Users
                     can set the availability to weekly and daily so that clients
                     are only allowed to select the date within the user s
                     availability. Users can also check all the meetings. There
                     are rescheduled functions and cancel functions as well. 
                   </p>
-                  <p className="my-8 text-xl lg:text-3xl">
+                  <p className="my-8 text-lg lg:text-2xl">
                     The Challenging part was implemented showing the host's
                     availability on the calendar for invitees. I needed to
                     consider numerous things such as coloring the dates that are
@@ -116,8 +119,8 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img alt="Appointly app image" src={mtgAppAvailabilityImg} />
-                  <img alt="Appointly app image" src={mtgAppGuestCalendarImg} />
+                  <img alt="Appointly app image" src={mtgAppAvailabilityImg} className="rounded-[10px]" />
+                  <img alt="Appointly app image" src={mtgAppGuestCalendarImg} className="rounded-[10px]" />
                 </div>
               </a>
             </div>
@@ -132,8 +135,8 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img alt="Trello app image" src={trelloCloneImg} />
-                  <img alt="Trello app image" src={trelloHomeImg} />
+                  <img alt="Trello app image" src={trelloCloneImg} className="rounded-[10px]" />
+                  <img a lt="Trello app image" src={trelloHomeImg} className="rounded-[10px]" />
                 </div>
               </a>
 
@@ -166,20 +169,20 @@ const ProjectsSection = ({ mode }) => {
                   target="_blank"
                 >
                   <div className="flex flex-col gap-4">
-                    <img alt="Job hunt app image" src={trelloCloneImg} />
-                    <img alt="Job hunt app image" src={trelloHomeImg} />
+                    <img alt="Job hunt app image" src={trelloCloneImg} className="rounded-[10px]" />
+                    <img alt="Job hunt app image" src={trelloHomeImg} className="rounded-[10px]" />
                   </div>
                 </a>
 
                 <div className="discription-container">
-                  <p className="my-8 text-xl lg:text-3xl">
+                  <p className="my-8 text-xl lg:text-2xl">
                     A MERN stack app which Trello-ish task management app. You
                     can create task cards on each board and organize those tasks
                     by drag and drop. Setting a due date and priority for each
                     card and you can check near-due date tasks and high-priority
                     tasks on my page section.
                   </p>
-                  <p className="my-8 text-xl lg:text-3xl">
+                  <p className="my-8 text-xl lg:text-2xl">
                     Implementing the delete project
                     function was one of the tough part. Each projects contain
                     boards list, each board contain task list, tasks, each task
@@ -237,13 +240,13 @@ const ProjectsSection = ({ mode }) => {
                   target="_blank"
                 >
                   <div className="flex flex-col gap-4">
-                    <img alt="Job hunt app image" src={jobHuntImg} />
-                    <img alt="Job hunt app image" src={jobHuntDetailImg} />
+                    <img alt="Job hunt app image" src={jobHuntImg} className="rounded-[10px]" />
+                    <img alt="Job hunt app image" src={jobHuntDetailImg} className="rounded-[10px]" />
                   </div>
                 </a>
 
                 <div className="discription-container">
-                  <p className="my-8 text-xl lg:text-3xl">
+                  <p className="my-8 text-xl lg:text-2xl">
                     Full stack app by Express.js, EJS, and Postgres. Using this
                     app, you can track which company you applied for and record
                     the status of the process with a simple and beautiful UI.
@@ -251,7 +254,7 @@ const ProjectsSection = ({ mode }) => {
                     sharing application status for motivating, and so on. The
                     difficulty of this app was the deployment part.
                   </p>
-                  <p className="my-8 text-xl lg:text-3xl">
+                  <p className="my-8 text-xl lg:text-2xl">
                     In the begging, I use MySql which is a database service provided by
                     Railway. I used the free tier so that I used up all the
                     usage in the middle of the month. it means I could not allow
@@ -281,8 +284,8 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img alt="Job hunt app image" src={jobHuntImg} />
-                  <img alt="Job hunt app image" src={jobHuntDetailImg} />
+                  <img alt="Job hunt app image" src={jobHuntImg} className="rounded-[10px]" />
+                  <img alt="Job hunt app image" src={jobHuntDetailImg} className="rounded-[10px]" />
                 </div>
               </a>
             </div>
@@ -297,8 +300,8 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img alt="Job hunt app image" src={dogPicFindImg} />
-                  <img alt="Job hunt app image" src={dogPicProfileImg} />
+                  <img alt="dog picture collection app image" src={dogPicFindImg} className="rounded-[10px]" />
+                  <img alt="dog picture collection app image" src={dogPicProfileImg} className="rounded-[10px]" />
                 </div>
               </a>
 
@@ -330,20 +333,20 @@ const ProjectsSection = ({ mode }) => {
                   target="_blank"
                 >
                   <div className="flex flex-col gap-4">
-                    <img alt="Job hunt app image" src={dogPicFindImg} />
-                    <img alt="Job hunt app image" src={dogPicProfileImg} />
+                    <img alt="dog picture collection app image" src={dogPicFindImg} className="rounded-[10px]" />
+                    <img alt="dog picture collection app image" src={dogPicProfileImg} className="rounded-[10px]" />
                   </div>
                 </a>
 
                 <div className="discription-container">
-                  <p className="my-8 text-xl lg:text-3xl">
+                  <p className="my-8 text-xl lg:text-2xl">
                     SNS-ish React app which users can post and find dog's
                     pictures. In finding page, the state is managed by React
                     tool kit and the picture data is fetched from Dog API.
                     Posted data are managed by Supabase. Managing API by using
                     redux thunk with RTK was quite challenging.
                   </p>
-                  <p className="my-8 text-xl lg:text-3xl">
+                  <p className="my-8 text-xl lg:text-2xl">
                     *There is a issue on Supabase GitHub related to sign up and
                     login methods. I am currently migrating to other services.
                   </p>
