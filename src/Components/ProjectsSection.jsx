@@ -5,14 +5,10 @@ import tailwindIcon from "../images/tailwindcss-icon.svg";
 import mongodbIcon from "../images/mongodb-icon.svg";
 import postgresIcon from "../images/postgres-icon.png";
 
-import mtgAppAvailabilityImg from "../images/Appointly-availability-page.png";
-import mtgAppGuestCalendarImg from "../images/Appointly-guest-calendar.png";
-import trelloCloneImg from "../images/Task-Manager-board.jpg";
-import trelloHomeImg from "../images/Task-manager-home.jpg";
-import jobHuntImg from "../images/Job-Hunt-Manager-applied-list.jpg";
-import jobHuntDetailImg from "../images/Job-Hunt-Manager-detail.jpg";
-import dogPicFindImg from "../images/dog-app-find.jpg";
-import dogPicProfileImg from "../images/dog-app-profile.jpg";
+import appointlydeviceImg from "../images/Appointly laptop image.png";
+import taskManagerdeviceImg from "../images/Task manager device image.png";
+import jobHuntOrganizerdeviceImg from "../images/Job hunt manager device image.png";
+import dogPicCollectiondeviceImg from "../images/Dog pic collection device image.png";
 
 import { sectionAnimation } from "./animations/sectionAnimation";
 
@@ -70,13 +66,7 @@ const ProjectsSection = ({ mode }) => {
                   <div className="flex flex-col gap-4">
                     <img
                       alt="Appointly app image"
-                      src={mtgAppAvailabilityImg}
-                      className="rounded-[10px]"
-                    />
-                    <img
-                      alt="Appointly app image"
-                      src={mtgAppGuestCalendarImg}
-                      className="rounded-[10px]"
+                      src={appointlydeviceImg}
                     />
                   </div>
                 </a>
@@ -90,7 +80,7 @@ const ProjectsSection = ({ mode }) => {
                     are rescheduled functions and cancel functions as well. 
                   </p>
                   <p className="my-8 text-lg lg:text-2xl">
-                    The Challenging part was implemented showing the host's
+                    The challenging part was implemented showing the host's
                     availability on the calendar for invitees. I needed to
                     consider numerous things such as coloring the dates that are
                     available, already booked dates and times, and so on.
@@ -119,8 +109,10 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img alt="Appointly app image" src={mtgAppAvailabilityImg} className="rounded-[10px]" />
-                  <img alt="Appointly app image" src={mtgAppGuestCalendarImg} className="rounded-[10px]" />
+                  <img
+                      alt="Appointly app image"
+                      src={appointlydeviceImg}
+                    />
                 </div>
               </a>
             </div>
@@ -135,8 +127,7 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img alt="Trello app image" src={trelloCloneImg} className="rounded-[10px]" />
-                  <img a lt="Trello app image" src={trelloHomeImg} className="rounded-[10px]" />
+                  <img a lt="Task manager image" src={taskManagerdeviceImg} />
                 </div>
               </a>
 
@@ -169,8 +160,7 @@ const ProjectsSection = ({ mode }) => {
                   target="_blank"
                 >
                   <div className="flex flex-col gap-4">
-                    <img alt="Job hunt app image" src={trelloCloneImg} className="rounded-[10px]" />
-                    <img alt="Job hunt app image" src={trelloHomeImg} className="rounded-[10px]" />
+                    <img alt="Task manager image" src={taskManagerdeviceImg} />
                   </div>
                 </a>
 
@@ -240,8 +230,7 @@ const ProjectsSection = ({ mode }) => {
                   target="_blank"
                 >
                   <div className="flex flex-col gap-4">
-                    <img alt="Job hunt app image" src={jobHuntImg} className="rounded-[10px]" />
-                    <img alt="Job hunt app image" src={jobHuntDetailImg} className="rounded-[10px]" />
+                    <img alt="Job hunt app image" src={jobHuntOrganizerdeviceImg} />
                   </div>
                 </a>
 
@@ -254,13 +243,13 @@ const ProjectsSection = ({ mode }) => {
                     sharing application status for motivating, and so on. The
                     difficulty of this app was the deployment part.
                   </p>
-                  <p className="my-8 text-xl lg:text-2xl">
+                  {/* <p className="my-8 text-xl lg:text-2xl">
                     In the begging, I use MySql which is a database service provided by
                     Railway. I used the free tier so that I used up all the
                     usage in the middle of the month. it means I could not allow
                     to use the app until next month. To resolve this problem, I
                     migrated to Postgres provided by Neon.
-                  </p>
+                  </p> */}
                   <div className="flex justify-center items-center gap-2">
                     <i className="fa-brands fa-square-js text-3xl lg:text-4xl"></i>
                     <i className="fa-brands fa-lg text-3xl lg:text-4xl fa-node-js"></i>
@@ -284,8 +273,7 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img alt="Job hunt app image" src={jobHuntImg} className="rounded-[10px]" />
-                  <img alt="Job hunt app image" src={jobHuntDetailImg} className="rounded-[10px]" />
+                  <img alt="Job hunt app image" src={jobHuntOrganizerdeviceImg} />
                 </div>
               </a>
             </div>
@@ -300,8 +288,7 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img alt="dog picture collection app image" src={dogPicFindImg} className="rounded-[10px]" />
-                  <img alt="dog picture collection app image" src={dogPicProfileImg} className="rounded-[10px]" />
+                  <img alt="dog picture collection app image" src={dogPicCollectiondeviceImg} />
                 </div>
               </a>
 
@@ -333,8 +320,7 @@ const ProjectsSection = ({ mode }) => {
                   target="_blank"
                 >
                   <div className="flex flex-col gap-4">
-                    <img alt="dog picture collection app image" src={dogPicFindImg} className="rounded-[10px]" />
-                    <img alt="dog picture collection app image" src={dogPicProfileImg} className="rounded-[10px]" />
+                    <img alt="dog picture collection app image" src={dogPicCollectiondeviceImg} />
                   </div>
                 </a>
 

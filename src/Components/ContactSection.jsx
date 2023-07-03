@@ -113,7 +113,7 @@ const ContactSection = ({ mode }) => {
             </form>
             <div className='flex flex-col items-center'>
               <div className='text-2xl'>Or</div>
-              <a href="mailto:snnp.ad.pnts@gmail.com">
+              <a href="mailto:yuriko.otorii@gmail.com">
                 <button className="border-2 border-white rounded-lg py-0.5 px-6 md:py-1 md:px-16 mt-2 text-xl md:text-3xl hover:bg-white hover:text-gray-500 duration-200">
                   <i className="fa-regular fa-envelope"></i> Open your mailer
                 </button>
