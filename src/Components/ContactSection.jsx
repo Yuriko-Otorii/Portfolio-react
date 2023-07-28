@@ -58,7 +58,7 @@ const ContactSection = ({ mode }) => {
     <section className="flex flex-col justify-center items-center mt-20" id="contacts">
         <h1 className='text-4xl font-bold mb-4 md:text-5xl'>Contact</h1>
         <div ref={sectionwrapper} className={mode? "w-11/12 h-auto bg-gray-500 bg-opacity-50 rounded-lg p-5": "w-11/12 h-auto bg-white bg-opacity-20 rounded-lg p-5"}>
-          <p className="text-2xl md:text-4xl font-bold text-center mb-5">I look forwad to hering from you!</p>
+          <p className="text-2xl md:text-4xl font-bold text-center mb-5">I look forward to hearing from you!</p>
           <div className="contact-section-container">
             <form onSubmit={handleSubmit} className="flex flex-col items-center">
               <label className="block mb-5 w-full md:w-2/3 text-lg flex flex-col items-center">
