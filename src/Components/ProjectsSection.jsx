@@ -127,7 +127,7 @@ const ProjectsSection = ({ mode }) => {
                 target="_blank"
               >
                 <div className="flex flex-col gap-4">
-                  <img a lt="Task manager image" src={taskManagerdeviceImg} />
+                  <img alt="Task manager image" src={taskManagerdeviceImg} />
                 </div>
               </a>
 

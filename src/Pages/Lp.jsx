@@ -4,9 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { setLpAnimation } from "../Components/animations/lpAnimation";
 import { TransitionState } from "../App";
 
+import mojs from '@mojs/core'
+
+
 const Lp = () => {
   const [leftRotationDegrees, setLeftRotateDegrees] = useState(0);
   const [rightRotationDegrees, setRighttRotateDegrees] = useState(0);
+  const [isPopped, setIsPopped] = useState(false)
+  const [burstObj, setBurstObj] = useState(null)
   const leftEye = useRef(null);
   const rightEye = useRef(null);
   const hoveredLeftEye = useRef(null);
@@ -16,9 +21,9 @@ const Lp = () => {
   const positionElem = useRef(null);
   const balloonWrapper = useRef(null);
   const popme = useRef(null);
+  const animDom = useRef();
   const navigate = useNavigate()
   const { setIsTransition } = useContext(TransitionState)
-
 
   useLayoutEffect(() => {
     setLpAnimation(cloudElem, nameElem, positionElem, balloonWrapper, popme);
@@ -31,6 +36,28 @@ const Lp = () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
   }, [leftRotationDegrees, rightRotationDegrees]);
+
+    useEffect(() => {
+      let burstPosition = 0
+      if(screen.width < 640){
+        burstPosition = 150
+      }else if(screen.width > 640 && screen.width < 1024){
+        burstPosition = 120
+      }else if(screen.width >= 1024){
+        burstPosition = 100
+      }
+
+      const burst = new mojs.Burst({
+        radius: { 0: 100 },
+        count: 8,
+        y: `rand(${burstPosition}, ${burstPosition})`,
+        children: {
+          fill: "#7dd3fc"
+        }
+      });
+
+      setBurstObj(burst)
+    }, [])
 
   const handleMouseOver = () => {
     leftEye.current && (leftEye.current.style.display = "none");
@@ -62,8 +89,14 @@ const Lp = () => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    setIsTransition(true)
-    navigate('/home')
+    setIsPopped(true)
+    setTimeout(() => {
+      burstObj.play()
+    }, 500)
+    setTimeout(() => {
+      setIsTransition(true)
+      navigate('/home')
+    }, 1300)
   }
 
   return (
@@ -92,9 +125,10 @@ const Lp = () => {
         </div>
       </div>
       <div id="cursor" className="cursor"></div>
+      <div ref={animDom}></div>
       <div
         ref={balloonWrapper}
-        className="animate-floating z-50 flex flex-col items-center justify-center absolute top-[60%] md:top-[50%] left-[31.5%] md:left-[43%]"
+        className={`${isPopped? 'animate-fadeout': 'animate-floating'} z-50 flex flex-col items-center justify-center absolute top-[60%] md:top-[50%] left-[31.5%] md:left-[43%]`}
         onMouseMove={handleMouseMove}
       >
         <div className="relative">
@@ -174,9 +208,9 @@ const Lp = () => {
             </div>
             <div
               ref={popme}
-              className="absolute top-[-70%] md:top-[-20%] left-[90%] md:left-[130%] right-2"
+              className={`absolute top-[-70%] md:top-[-20%] left-[90%] md:left-[130%] right-2`}
             >
-              <div className="relative">
+              <div className={`${isPopped? "hidden": "block"} relative`}>
                 <div className="w-28 h-[3.5rem] border border-sky-900 rounded-full flex justify-center items-center">
                   <p className="text-2xl font-poorStory font-bold text-sky-900">Pop me!</p>
                 </div>

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mojs/core": "^1.6.0",
     "emailjs-com": "^3.2.0",
     "gsap": "^3.11.4",
     "react": "^18.2.0",
