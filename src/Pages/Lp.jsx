@@ -1,8 +1,7 @@
-import { useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { setLpAnimation } from "../Components/animations/lpAnimation";
-import { TransitionState } from "../App";
 
 import mojs from '@mojs/core'
 
@@ -23,7 +22,6 @@ const Lp = () => {
   const popme = useRef(null);
   const animDom = useRef();
   const navigate = useNavigate()
-  const { setIsTransition } = useContext(TransitionState)
 
   useLayoutEffect(() => {
     setLpAnimation(cloudElem, nameElem, positionElem, balloonWrapper, popme);
@@ -94,7 +92,6 @@ const Lp = () => {
       burstObj.play()
     }, 500)
     setTimeout(() => {
-      setIsTransition(true)
       navigate('/home')
     }, 1300)
   }

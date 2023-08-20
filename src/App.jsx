@@ -1,4 +1,4 @@
-import { createContext, lazy, Suspense, useState } from 'react'
+import { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import './App.css'
@@ -6,16 +6,12 @@ import './App.css'
 const Home = lazy(() => import("./Pages/Home"));
 const Lp = lazy(() => import("./Pages/Lp"));
 
-export const TransitionState = createContext()
-
 const router = createBrowserRouter([
   {path: '/', element: <Lp />},
   {path: '/home', element: <Home />},
 ])
 
 function App() {
-const [isTransition, setIsTransition] = useState(false)
-const transitionValue = { isTransition, setIsTransition }
 
   return (
     <Suspense
@@ -35,9 +31,7 @@ const transitionValue = { isTransition, setIsTransition }
         </div>
       }
     >
-      <TransitionState.Provider value={transitionValue}>
-        <RouterProvider router={router} />
-      </TransitionState.Provider>
+      <RouterProvider router={router} />
     </Suspense>
   )
 }
