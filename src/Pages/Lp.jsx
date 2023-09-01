@@ -51,7 +51,7 @@ const Lp = () => {
         y: `rand(${burstPosition}, ${burstPosition})`,
         children: {
           fill: "#7dd3fc",
-          duration: 500
+          duration: 450
         }
       });
 

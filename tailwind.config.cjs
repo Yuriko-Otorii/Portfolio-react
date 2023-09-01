@@ -22,7 +22,7 @@ module.exports = {
         'downMove': "FrameOutAnimation 0.5s forwards",
         'floating': "floating 1s infinite ease-in-out .8s alternate",
         'swaing': "swaing 2s linear infinite",
-        'fadeout': "fadeOut .5s ease-out forwards",
+        'fadeout': "fadeOut .2s ease-out forwards",
       },
       keyframes: {
         FrameOutAnimation: {
@@ -71,9 +71,6 @@ module.exports = {
           '0%': { 
             opacity: "1",
            },
-          '10%': { 
-            opacity: ".7",
-          },
           '100%': { 
             opacity: "0",
             transform: "scale(.5)"
