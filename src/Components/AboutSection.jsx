@@ -29,8 +29,8 @@ const AboutSection = ({ mode }) => {
             : 'w-11/12 h-auto bg-white bg-opacity-20 rounded-lg p-5'
         }
       >
-        <div className="flex flex-col items-center lg:w-full lg:flex-row lg:py-10 lg:mx-auto">
-          <div className="flex flex-col justify-between lg:w-[70%] lg:pr-10 lg:mx-5">
+        <div className="flex flex-col items-center justify-center lg:w-full lg:flex-row lg:py-10 lg:mx-auto">
+          <div className="flex flex-col justify-between lg:w-[70%] lg:pr-10 lg:mx-5 max-w-[700px]">
             <h3 className="text-2xl lg:text-4xl font-bold text-center">
               Hi, I am Yuriko!
             </h3>
